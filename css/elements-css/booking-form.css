@@ -1,0 +1,553 @@
+.booking-section {
+    position: relative;    
+    z-index: 99;
+    margin-top: -85px;  
+}
+.booking-section .filter-wrapper .nav-buttons {
+    display: flex;
+    align-items: center;
+}
+.booking-section .filter-wrapper .nav-buttons .nav-pills {
+    border-radius: 10px 10px 0 0;
+    background: #ffffff;
+    display: inline-flex;
+    border-bottom: none;
+}
+.booking-section .filter-wrapper .nav-buttons .nav-pills .nav-item:first-child .nav-link {
+    border-radius: 10px 0 0 0;
+    border-left: unset
+}
+.booking-section .filter-wrapper .nav-buttons .nav-pills .nav-item:last-child .nav-link {
+    border-radius: 0 10px 0 0;
+}
+.booking-section .filter-wrapper .nav-buttons .nav-pills .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #fff;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    padding: 8px 40px;
+    border-radius: unset;
+    border-left: 1px solid #dbe1cd;
+    width: 100%;
+    background: #000000;
+}
+.booking-section .filter-wrapper .nav-buttons .nav-pills .nav-item .nav-link.active {
+    background-color: #fff;
+    color: #000
+}
+.booking-section .filter-wrapper .filter-group {
+    border-radius: 0 10px 10px 10px;
+    background: #ffffff;
+    box-shadow: 0 20px 80px 0 rgb(0 0 0 / 8%);
+}
+.booking-section .filter-wrapper .filter-group form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+}
+.booking-section .filter-wrapper .filter-group form .filter-area {
+    padding: 10px 30px;
+    width: 100%
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .icon svg {
+    fill: var(--theme-color)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input {
+    line-height: 1;
+    flex-grow: 1;
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input label {
+    color: #6a6a6a;
+    font-family: var(--primary-font);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    display: block;
+    margin-bottom: 5px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input input {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .3px;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input input::-moz-placeholder {
+    color: #000
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input input::placeholder {
+    color: #000
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input i {
+    color: #000;
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input h6 {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .3px;
+    /* min-width: 188px; */
+    /* width: 100%; */
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap {
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 5px;
+    max-width: 250px;
+    min-width: 250px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 9;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.08);
+    display: none;
+    transform: scaleY(0);
+    transform-origin: top
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap::-webkit-scrollbar {
+    width: 5px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap::-webkit-scrollbar-track {
+    background: #f5f4f4
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 20px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .custom-select-search-area {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px 5px;
+    padding-bottom: 5px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .custom-select-search-area i {
+    color: var(--theme-color)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .custom-select-search-area input {
+    background-color: transparent;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+    margin-bottom: 5px;
+    position: relative
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li:last-child {
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li .destination h6 {
+    font-size: 14px;
+    font-family: var(--primary-font);
+    color: #000;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li .destination p {
+    font-size: 12px;
+    font-family: var(--secondary-font);
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 1.4
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li .tour span {
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--secondary-font);
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    background-color: var(--theme-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li::before {
+    content: "";
+    height: 100%;
+    width: 3px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .5s
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li.single-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f5f4f4;
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li.single-item:last-child {
+    border-bottom: none
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li.single-item h6 {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    color: #000;
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li:hover {
+    background: rgba(211,211,211,.231372549)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .option-list li:hover::before {
+    opacity: 1
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f5f4f4
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .title h6 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    color: #000;
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .title span {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--secondary-font);
+    color: #000;
+    margin-bottom: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .quantity-counter {
+    display: flex;
+    align-items: center
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .quantity-counter a {
+    height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .35s;
+    font-size: 14px;
+    color: var(--theme-color)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .quantity-counter a:hover {
+    color: #fff;
+    background-color: var(--theme-color)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .guest-count .single-item .quantity-counter input {
+    width: 40px;
+    background-color: transparent;
+    text-align: center;
+    line-height: 1;
+    color: #000;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    font-weight: 500
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap.active {
+    display: block;
+    transform: scaleY(1);
+    animation: fade-down .3s linear
+}
+@keyframes fade-down2 {
+    0% {
+        opacity: 0;
+        transform: scaleY(0) translateX(-50%);
+        visibility: hidden
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1) translateX(-50%);
+        visibility: visible
+    }
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap.two {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 180px;
+    padding: 0
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap.no-scroll {
+    overflow-y: initial;
+    max-width: unset
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .select-input input {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .select-input input::-moz-placeholder {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .select-input input::placeholder {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .select-input i {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .select-input h6 {
+    color: #fff;
+    min-width: 150px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap {
+    background-color: #000;
+    border: unset;
+    top: 47px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap::-webkit-scrollbar {
+    border-radius: 10px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 10px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 10px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .custom-select-search-area input {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .option-list li::before {
+    background-color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .option-list li .destination h6,.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .option-list li .destination p {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .option-list li.single-item {
+    border-bottom: 1px solid #282727
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .option-list li.single-item h6 {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .guest-count .single-item {
+    border-bottom: 1px solid #282727
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .guest-count .single-item .title h6,.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .guest-count .single-item .title span {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown.style-2 .custom-select-wrap .guest-count .single-item .quantity-counter input {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter {
+    position: relative
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter a {
+    color: #000;
+    line-height: 1
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter a i {
+    font-size: 14px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter .quantity__plus {
+    position: absolute;
+    top: -8px;
+    right: 20px
+}
+@media(max-width: 1199px) {
+    .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter .quantity__plus {
+        right:0
+    }
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter .quantity__minus {
+    position: absolute;
+    top: 8px;
+    right: 20px
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter .quantity__input {
+    width: 100%;
+    height: unset;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .48px;
+    border: none
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input>.quantity-counter .quantity__input:focus {
+    border: none
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .divider {
+    position: relative
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #dbe1cd;
+    width: 1px;
+    height: 40px;
+}
+.booking-section .filter-wrapper .filter-group form button {
+    color: #fff;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .54px;
+    white-space: nowrap;
+    background-color: var(--theme-color);
+    padding: 21px 53px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1
+}
+.booking-section .filter-wrapper .filter-group form button::after {
+    position: absolute;
+    content: "";
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: -4%;
+    height: 150%;
+    width: 150%;
+    bottom: 0;
+    border-radius: 2px;
+    background-color: #000;
+    transform: skewX(45deg) scale(0,1);
+    z-index: -1;
+    transition: all .5s ease-out 0s
+}
+.booking-section .filter-wrapper .filter-group form button:hover {
+    color: #fff
+}
+.booking-section .filter-wrapper .filter-group form button:hover::after {
+    transform: skewX(45deg) scale(1,1)
+}
+.booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .icon i {
+    color: var(--theme-color);
+    font-size: 24px;
+    line-height: 36px;
+}
+@media only screen and (max-width: 1199px){
+    .booking-section .filter-wrapper .filter-group form .divider:nth-child(1) .single-search-box{
+        margin-bottom: 20px;
+    }
+    .booking-section .filter-wrapper .filter-group form .divider:nth-child(2) .single-search-box{
+        margin-bottom: 20px;
+    }
+    .booking-section .filter-wrapper .filter-group form .filter-area .divider::after{
+        display: none;
+    }
+}
+@media only screen and (max-width: 991px){
+    .booking-section{
+        margin-top: 50px;
+    }
+    .booking-section .filter-wrapper .nav-buttons .nav-pills{
+        box-shadow: -5px 0 20px rgb(0 0 0 / 10%);
+    }
+}
+@media only screen and (max-width: 767px){
+    .booking-section .filter-wrapper .filter-group form .filter-area{
+        padding: 10px 0 0px;
+    }
+    .booking-section .filter-wrapper .filter-group form{
+        display: block;
+    }
+    .booking-section .filter-wrapper .filter-group form .single-search-box{
+        margin-bottom: 20px;
+    }
+}
+.dark-bg .booking-section .filter-wrapper .filter-group {
+    border-radius: 10px;
+    background: rgb(255 255 255 / 10%);
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input label{
+    color: #FFFFFF;
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .icon i{
+    color: var(--theme-color);
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input input{
+    color: #FFFFFF;
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input h6{
+    color: #FFFFFF;
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .select-input i{
+    color: #FFFFFF;
+}
+.dark-bg .booking-section .filter-wrapper .filter-group form .filter-area .divider::after{
+    background: rgb(255 255 255 / 10%);
+}
+
+.booking-section.home-three{
+    margin-top: -45px;
+}
+.booking-section.home-three .filter-wrapper .filter-group{
+    border-radius: 10px;
+}
+.booking-section.home-three .colmun{
+    padding: 0px 5px;
+}
+.booking-section.home-three .single-search-box{
+    border-radius: 5px;
+    padding: 10.5px 20px;
+    border: 1px solid #E5E5E5;
+}
+.booking-section.home-three .filter-wrapper .filter-group form{
+    gap: 10px;
+    padding: 15px;
+}
+.booking-section.home-three .filter-wrapper .filter-group form .filter-area {
+    padding: 0px 10px;
+    width: 100%;
+}
+@media only screen and (max-width: 991px){
+    .booking-section.home-three .single-search-box{
+        margin-bottom: 10px;
+    }
+}
