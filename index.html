@@ -1,725 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
-<!-- Mirrored from z.commonsupport.com/html/carola/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jul 2025 13:47:36 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
+	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
+	<title>Local index - HTTrack Website Copier</title>
+  <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
+	<style type="text/css">
+	<!--
 
-    <title>Ascendence-EV</title>
-
-    <link href="assets/css/bootstrap.css" rel="stylesheet">    
-    <link href="assets/css/fontawesome-all.css" rel="stylesheet">  
-    <link href="assets/css/iconfont.css" rel="stylesheet">  
-    <link href="assets/css/owl.css" rel="stylesheet">
-    <link href="assets/css/global.css" rel="stylesheet">
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-    <link href="assets/css/elements-css/header.css" rel="stylesheet">
-    <link href="assets/css/elements-css/footer.css" rel="stylesheet">
-    <link href="assets/css/elements-css/booking-form.css" rel="stylesheet">
-    <link href="assets/language-switcher/polyglot-language-switcher.css" rel="stylesheet" />
-    <link href="assets/css/daterangepicker.css" rel="stylesheet">
-    <link href="assets/css/jquery-ui.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.css">
-
-    <!-- Fav Icon -->
-    <link rel="shortcut icon" href="assets/images/Mainlogo.png" type="image/x-icon">
-    <link rel="icon" href="assets/images/Mainlogo.png" type="image/x-icon">
-    <!-- End Fav Icon -->
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
-    <!-- End Google Fonts -->
-
-    <!-- Add this style in your <head> section -->
-    <style>
-        .main-menu .navigation > li > a {
-            color: #fff !important;
-            transition: color 0.3s;
-        }
-        .main-menu.scrolled .navigation > li > a {
-            color: #fff !important;
-        }
-        .main-menu .navigation > li.active > a,
-        .main-menu .navigation > li > a:hover {
-            color: hsl(30, 20%, 96%) !important; /* Optional: highlight on hover/active */
-        }
-        /* Center the navigation menu and space out items */
-        .main_header_menu {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .main-menu .navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px; /* space between menu items */
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        .main-menu .navigation > li {
-            display: inline-block;
-            position: relative;
-        }
-        .main-menu .navigation > li > a {
-            font-size: 18px;
-            padding: 10px 18px;
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .main-menu .navigation > li > a:hover,
-        .main-menu .navigation > li.active > a {
-            color: hsl(0, 0%, 96%);
-        }
-        /* Reduce navbar height */
-        .main_header_inner {
-            min-height: 60px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-        /* Increase logo size */
-        .main_header_logo img {
-            max-height: 120px;
-            width: auto;
-            height: auto;
-            transition: max-height 0.3s;
-        }
-        @media (max-width: 991px) {
-            .main_header_logo img {
-                max-height: 50px;
-                width: auto;
-                height: auto;
-            }
-        }
-        /* Sticky/Scrolled Navbar: keep black, make transparent */
-        .main_header,
-        .sticky_header {
-            background: rgba(0,0,0,0.7) !important;
-            box-shadow: none !important;
-            transition: background 0.3s;
-        }
-        .main-menu.scrolled {
-            background: rgba(247, 245, 245, 0.7) !important;
-        }
-        /* Remove white background on scroll */
-        .main-menu.scrolled .navigation > li > a {
-            color: #fff !important;
-        }
-        /* Responsive adjustments */
-        @media (max-width: 991px) {
-            .main-menu .navigation {
-                gap: 20px;
-            }
-            .main_header_logo img {
-                max-height: 70px;
-            }
-        }
-        /* ...existing code... */
-        .slider_content h2 {
-            color: #fff !important; /* Use white for the heading */
-            /* Or use color: rgb(254, 253, 253) !important; for near-white */
-        }
-        .slider_content h1 {
-            color: lch(51.8% 93.81 37.17) !important; /* Red (use #fff for white) */
-            /* Or use color: #fff !important; for white */
-        }
-        /* --- Adjust transparent box to fit content and highlight text --- */
-        .slider-box-bg {
-            background: rgba(0,0,0,0.5); /* Slightly lighter for better text visibility */
-            border-radius: 1.5rem;
-            padding: 1.5rem 3rem; /* Reduced horizontal padding for better fit */
-            display: inline-block; /* Fit content width */
-            max-width: 98vw; /* Increased max width closer to edges */
-            margin: 10px auto; /* Center horizontally */
-            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
-            color: #fff; /* Ensure text is white */
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        /* --- Separate text color styling for easy changes --- */
-        .slider_content h1 {
-            color: hwb(0 96% 3%) !important;         /* Main heading color */
-            font-weight: bold;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            margin-bottom: 1rem;
-        }
-        .slider_content h2 {
-            color: hsl(0, 0%, 100%) !important;      /* Secondary heading color (red) */
-            font-weight: bold;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            margin-bottom: 1rem;
-        }
-        .slider_content h5 {
-            color: #eee !important;         /* Subheading color */
-            font-weight: 500;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            margin-bottom: 1.5rem;
-        }
-        @media (max-width: 1400px) {
-            .slider-box-bg {
-                max-width: 98vw;
-                width: 98vw;
-            }
-        }
-        @media (max-width: 767px) {
-            .slider-box-bg {
-                padding: 1rem 0.5rem;
-                max-width: 95vw;
-                width: 95vw;
-            }
-        }
-        /* About Sections White Text Styles */
-        /* About Section */
-        .about-section h2,
-        .about-section h3,
-        .about-section h4,
-        .about-section h5,
-        .about-section h6 {
-            color: #ffffff !important;
-        }
-        
-        .about-section p {
-            color: #ffffff !important;
-        }
-        
-        .about-section .section-title .sub-title {
-            color: #FF2C3B !important; /* Keep the theme color for sub-titles */
-        }
-        
-        .about-section .about-info-title {
-            color: #ffffff !important;
-        }
-        
-        .about-section .about-info-text {
-            color: #ffffff !important;
-        }
-
-    </style>
-
-     <style>
-    .map-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .pin {
-      cursor: pointer;
-      fill: #007bff;
-      animation: bounce 2s infinite;
-    }
-    .pin:hover {
-      fill: #0056b3;
-    }
-    .tooltip {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 14px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-    
-h5 {
-    font-size: 20px;
-    line-height: 30px;
+body {
+	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
+	background: #77b;
 }
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    color: #ffffff;
-    font-family: var(--primary-font);
-}
-    </style>
+body, td {
+	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	}
+
+#subTitle {
+	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
+	}
+
+#siteNavigation a, #siteNavigation .current {
+	font-weight: bold;  color: #448;
+	}
+#siteNavigation a:link    { text-decoration: none; }
+#siteNavigation a:visited { text-decoration: none; }
+
+#siteNavigation .current { background-color: #ccd; }
+
+#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
+#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
+
+
+a:link    { text-decoration: underline;  color: #00f; }
+a:visited { text-decoration: underline;  color: #000; }
+a:hover   { text-decoration: underline;  color: #c00; }
+a:active  { text-decoration: underline; }
+
+#pageContent {
+	clear: both;
+	border-bottom: 6px solid #000;
+	padding: 10px;  padding-top: 20px;
+	line-height: 1.65em;
+	background-image: url(backblue.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+	}
+
+#pageContent, #siteNavigation {
+	background-color: #ccd;
+	}
+
+
+.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
+.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
+
+hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+
+h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
+h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
+h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
+h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+
+.blak { background-color: #000; }
+.hide { display: none; }
+.tableWidth { min-width: 400px; }
+
+.tblRegular       { border-collapse: collapse; }
+.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
+.tblHeaderColor, .tblHeaderColor td { background: #99c; }
+.tblNoBorder td   { border: 0; }
+
+
+// -->
+</style>
 
 </head>
 
-<!-- Page Wrapper -->
-<body class="boxed_wrapper dark-bg">
+<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
+	<tr>
+	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
+	</tr>
+</table>
+<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
+<tr class="blak">
+<td>
+	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
+	<tr>
+	<td colspan="6"> 
+		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
+		<tr> 
+		<td id="pageContent"> 
+<!-- ==================== End prologue ==================== -->
 
-<!-- preloader -->
-<div class="loader-wrap">
-    <div class="preloader">
-        <div class="preloader-close">x</div>
-        <div id="handle-preloader" class="handle-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="ASC" class="letters-loading">
-                        ASC
-                    </span>
-                    <span data-text-preloader="END" class="letters-loading">
-                        END
-                    </span>
-                    <span data-text-preloader="ANCE" class="letters-loading">
-                        ANCE
-                    </span>
-                    <span data-text-preloader="-" class="letters-loading">
-                        -
-                    </span>
-                    <span data-text-preloader="EV" class="letters-loading">
-                        EV
-                    </span>
-                   
-                </div>
-            </div>  
-        </div>
-    </div>
-</div>
-<!-- preloader end -->
-
-    <!-- Main Header -->
-    <header class="header dark-header">
-
-        <!-- Main Header -->
-        <div class="main_header">
-            <div class="container"> 
-                <div class="main_header_inner">
-                    <div class="main_header_logo">
-                        <figure>
-                            <a href="index.html"><img src="assets/images/Mainlogo.png" alt="Companny Logo"></a>
-                        </figure>
-                    </div>
-                    <div class="main_header_menu menu_area">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </div>
-                        <nav class="main-menu">
-                            <div class="collapse navbar-collapse show" id="navbarSupportedContent">
-                                <ul class="navigation">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li class="active"><a href="Configuration.html">Configurator</a></li>    
-                                    <li class="active"><a href="gallery.html">Gallery</a></li>
-                                    <li class="active"><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Main Header -->
-
-    
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="icon-13"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <img src="assets/images/Mainlogo.png" alt="Company Logo" class="mobile-logo">
-                    </a>
-                </div>
-                <div class="menu-outer">
-                    <!-- Content will be dynamically inserted here -->
-                </div>
-            </nav>
-        </div>
-        <!-- End Mobile Menu -->
-
-    
-</header>
-<!-- End Main Header -->
-
-<!-- Slider Two -->
-<section class="slider style_two">
-    <div class="owl-carousel owl-nav-none owl-dots-none theme_carousel owl-theme"
-       data-options='{"loop": true, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 7000, "smartSpeed": 1800, "responsive":{ "0" :{ "items": "1" }, "768" :{ "items" : "1" } , "1000":{ "items" : "1" }}}'>
-       <div class="slide-item-content">
-          <div class="slide-item content_left">
-             <div class="image-layer" style="background-image:url(assets/images/sliders/mainpage.jpg)">
-             </div>
-             <div class="container d-flex justify-content-center align-items-center" style="height: 100%;">
-                <div class="slider_content slider-box-bg text-center">
-                    <h1>Introducing Semeta-TRT</h1>
-                    <h5>
-                        Welcome to Comfort, Safety, and Attraction<br>
-                        Accessible, Super Car Style and Performance Electric Urban mobility
-                    </h5>
-                    <div class="button_all">
-                        <a href="#" target="_blank" rel="nofollow" class="btn-style-four">Learn More</a>
-                    </div>
-                </div>
-             </div>
-          </div>
-       </div>
-       <!-- Add more .slide-item-content blocks here for more slides -->
-    </div>
-</section>
-<!-- Slider Two End -->
-
-<!-- Work Process Section -->
-<section class="works-process-section pt_60 pb_90">
-    <div class="container">
-        <div class="section-title centred light mb_60" style="font-weight: 900; font-size: 2.5rem; color: #fff; display: center; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px;">
-            <span class="sub-title">Our Featured Electric Vehicles</span>
-            <h3></h3>
-        </div>
-        <div class="features-fleet-row" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; margin-bottom: 40px;">
-            <div class="features-list-col" style="flex: 1 1 320px; min-width: 280px; max-width: 600px; color: #fff; font-size: 1.1rem;">
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                    <span style="background: rgba(255, 255, 255, 0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-bolt" style="margin-right: 8px;"></i> Fully Electric
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-user-friends" style="margin-right: 8px;"></i> 2 seater
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-battery-three-quarters" style="margin-right: 8px;"></i> 10-30 KWhr Battery options
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-cogs" style="margin-right: 8px;"></i> 1, 2, &amp; 3 wheel drive options
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-road" style="margin-right: 8px;"></i> +300km Range
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-tachometer-alt" style="margin-right: 8px;"></i> 150 KM/hr software-capped speed limit by Region
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-dollar-sign" style="margin-right: 8px;"></i> Configure performance to your Budget from $5,000 to $20,000+
-                    </span>
-                    <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; min-width: 140px;">
-                        <i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Active Lean Mechanism to enhance Cornering, Safety, stability, and smoothness.
-                    </span>
-                </div>
-            </div>
-            <div class="fleet-image-col" style="flex: 1 1 320px; min-width: 280px; display: flex; justify-content: center; align-items: center;">
-                <img src="assets/images/gallery/No8.jpg" alt="Vehicle Fleet" style="max-width: 400px; width: 150%; border-radius: 25px; box-shadow: 0 4px 24px rgba(0,0,0,0.25); background: #111;" />
-            </div>
-        </div>
-
-<!-- Work Process Section -->
-
-<!-- Display Section -->
-<section class="promotional-banner-section pb_90">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 clomun">
-                <div class="promotional-banner-block">
-                    <span>Fully Electric</span>
-                    <h2> <img src="assets/images/banner/banner-bg.png" alt=""></h2>
-                    <h6></h6>
-                    <div class="promotional-banner-image">
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 clomun">
-                <div class="promotional-banner-block">
-                    <span>+300km Range</span>
-                    <h2> <img src="assets/images/banner/banner-bg3.png" alt=""></h2>
-                    <h6></h6>  
-                    <div class="promotional-banner-image">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 clomun">
-                <div class="promotional-banner-block">
-                    <span>2 seater</span>
-                    <h2> <img src="assets/images/banner/banner-bg2.png" alt=""></h2>
-                    <h6></h6>
-                    <div class="promotional-banner-image">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Display Section End -->
-
-<!-- Featured Cars Section -->
-<section class="featured-car-section pb_90">
-    <div class="container">
-        <div class="section-title centred light mb_60">
-            <span class="sub-title"></span>
-            <h2 class="title">Our EV</h2>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/popular-car/fleet.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/car-type/new1.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/car-type/SEMETA.30.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/car-type/no1.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/car-type/SEMETA.20.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div class="single-featured-car-block">
-                    <div class="single-featured-car-image">
-                        <a href="#"><img src="assets/images/car-type/SEMETA.25.png" alt=""></a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</section>
-<!-- Featured Cars Section End -->
-
-<!-- Breadcrumb Section -->
-<section class="breadcrumb-section" style="background-image: url(assets/images/background/SEMETA.27.png);">
-    <div class="container">
-        <div class="banner-content">
-            <h1>About Us</h1>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
-
-<!-- About Section -->
-<section class="about-section pt_120 pb_120">
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-12">
-                <div class="about-left-image">
-                    <img src="assets/images/resource/red.png" alt="">
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-12">
-                <div class="section-title pt_50 mb_30">
-                    <span class="sub-title">Why Semeta-TRT??</span>
-                    <h3 class="title">+75% of car journeys are less than 10km and usually only with the driver. <br> Do we really need a 3 Ton vehicle to make such journey?</h3>
-                </div>
-                <div class="about-info-block mb_30">
-                   
-                    <div class="about-info-content">
-                        <h5 class="about-info-title">Electric vehicles should not be as expensive as the global price of batteries are trending towards Less than $100 per KWhr</h5>
-                       
-                    </div>
-                </div>
-                <div class="about-info-block">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-            <div class="section-title centred mb_60">
-                <span class="sub-title">Ascendance-EV Vehicles Fleets</span>
-                <h5 class="title">An average sedan carries just 1 person (the Driver) for 90% of its life <br> and 2 people for an extra 5% of its useful life.
-Affordable Vehicles have absolutely no right to be Ugly. <br> We configure performance to your Budget ranging from $5,000-$30,000+</h5>
-</section>
-    </div>
-<!-- About Section End -->
+	<meta name="generator" content="HTTrack Website Copier/3.x">
+	<TITLE>Local index - HTTrack</TITLE>
+</HEAD>
+<BODY>
+<H1 ALIGN=Center>Index of locally available sites:</H1>
+	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
+		<TR>
+			<TD BACKGROUND="fade.gif">
+				&middot;
+					<A HREF="z.commonsupport.com/html/carola/index-2.html">
+						Carola - HTML 5 Template Preview
+					</A>		
+			</TD>
+		</TR>
+	</TABLE>
+	<BR>
+	<BR>
+	<BR>
+  	<H6 ALIGN="RIGHT">
+	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO'2008]</I>
+	</H6>
+	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
+	<!-- Thanks for using HTTrack Website Copier! -->
+	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=z.commonsupport.com/html/carola/index-2.html">
 
 
-<!-- Main Footer -->
-<footer class="main_footer">
-    <div class="container">
-        <div class="footer-top-outer">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                    <div class="footer_widget footer_about_widget">
-                        <figure class="footer_widget_logo">
-                            <a href="index.html"><img src="assets/images/Mainlogo.png" alt=""></a>
-                        </figure>
-                        <h6><strong>Follow Us On:</strong></h6>
-                        <ul class="social-links">
-                            <li><a href="#"><i class="fab fa-square-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-square-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                    <div class="footer_widget footer_resources_widget">
-                        <h4 class="footer_widget_title">Resources</h4>
-                        <ul class="resources_page_list">
-                            <li><a href="#">About Team</a></li>
-                            <li><a href="#">Policies</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
-                    <div class="footer_widget footer_community_widget">
-                        <h4 class="footer_widget_title">Community</h4>
-                        <ul class="community_page_list">
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="footer_widget footer_contact_widget">
-                        <h4 class="footer_widget_title">Contact</h4>
-                        <p>DBI Campus No. 1 Nitel Road, Cappa-Oshodi 100261 Lagos
-                            <br>
-                            Lot 660, Hay Moulay Rachid Ben Guerir, 43150, Morocco
-                        </p>
-                        <ul class="footer-info-list">
-                            <li><a href="#">hello@ascendanceev.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom-outer">
-            <div class="copyright">Copyright &copy; 2025 &nbsp;<a href="index.html">Ascendance-EV</a> , Inc. All Rights Reserved</div>            
-        </div>
-    </div>
-</footer>
-<!-- Main Footer End -->
+<!-- ==================== Start epilogue ==================== -->
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
 
-<!-- Scroll to Top -->
-<button class="scroll-top scroll-to-target" data-target="html">
-    <i class="icon-13"></i>
-</button>
-<!--End Scroll to Top -->
-
-<!-- Include Js -->
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/jquery-ui.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/daterangepicker.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/select2.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<script src="assets/js/jquery.fancybox.js"></script>
-<script src="assets/js/appear.js"></script>
-<script src="assets/js/wow.js"></script>
-<script src="assets/js/owl.js"></script>
-<script src="assets/js/validation.js"></script>
-<script src="assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/booking-form.js"></script>
-<!-- End Include Js -->
-
-<!-- Add this script before </body> -->
-<script>
-    window.addEventListener('scroll', function() {
-        var menu = document.querySelector('.main-menu');
-        if(window.scrollY > 60) {
-            menu.classList.add('scrolled');
-        } else {
-            menu.classList.remove('scrolled');
-        }
-    });
-    new WOW().init();
-</script>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-  // Initialize the map with no interactivity
-  const map = L.map('map', { 
-    zoomControl: false, 
-    dragging: false, 
-    scrollWheelZoom: false, 
-    doubleClickZoom: false, 
-    boxZoom: false, 
-    keyboard: false, 
-    tap: false, 
-    touchZoom: false 
-  }).setView([15, 10], 2.2);
-  
-  // Add tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '',
-    interactive: false
-  }).addTo(map);
-
-  // Define colors for each region
-  const colors = { 
-    nigeria: "green", 
-    africa: "orange", 
-    europe: "red", 
-    americas: "blue" 
-  };
-
-  // Function to add labeled markers for each region
-  function addRegionMarker(lat, lon, name, region) {
-    // Add colored dot marker
-    L.circleMarker([lat, lon], {
-      radius: 8,
-      fillColor: colors[region],
-      color: "#000",
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 0.9
-    }).addTo(map);
-
-    // Add label beside the marker with region color
-    const regionColors = {
-      nigeria: '#1e7e34',
-      africa: '#fd7e14',
-      europe: '#dc3545',
-      americas: '#007bff'
-    };
-    L.marker([lat, lon], {
-      icon: L.divIcon({
-        className: 'label-class',
-        html: `<div style="color: ${regionColors[region]}; font-size: 14px; font-weight: bold; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 6px; white-space: nowrap;">${name}</div>`,
-        iconAnchor: [-10, -15]
-      })
-    }).addTo(map);
-  }
-
-  // Add markers for each region
-  addRegionMarker(9, 8, 'Nigeria', 'nigeria');
-  addRegionMarker(0, 20, 'Africa', 'africa');
-  addRegionMarker(54, 15, 'Europe', 'europe');
-  addRegionMarker(20, -80, 'South/North America', 'americas');
-</script>
+<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
+	<tr>
+	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
+	</tr>
+</table>
 
 </body>
-<!-- End Page Wrapper -->
 
-<!-- Mirrored from z.commonsupport.com/html/carola/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jul 2025 13:49:25 GMT -->
 </html>
+
+
