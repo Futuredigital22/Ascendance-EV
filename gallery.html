@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from z.commonsupport.com/html/carola/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jul 2025 13:49:46 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ascendance-EV</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">    
+    <link href="assets/css/fontawesome-all.css" rel="stylesheet">  
+    <link href="assets/css/iconfont.css" rel="stylesheet">  
+    <link href="assets/css/owl.css" rel="stylesheet">
+    <link href="assets/css/global.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/elements-css/header.css" rel="stylesheet">
+   
+ <link href="assets/css/elements-css/footer.css" rel="stylesheet">
+    <link href="assets/css/elements-css/booking-form.css" rel="stylesheet">
+    <link href="assets/language-switcher/polyglot-language-switcher.css" rel="stylesheet" />
+    <link href="assets/css/daterangepicker.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="assets/images/Mainlogo.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/Mainlogo.png" type="image/x-icon">
+    <!-- End Fav Icon -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
+    <!-- End Google Fonts -->
+
+    <!-- Header Top White Font Styling -->
+    <style>
+        /* Make header top section background semi-transparent and text white */
+        .header-top-one {
+            background: rgba(0, 0, 0, 0.8) !important;
+        }
+        
+        .header-top-info p {
+            color: #ffffff !important;
+        }
+        
+        .header-top-contact-info a {
+            color: #ffffff !important;
+        }
+        
+        .header-top-contact-info i {
+            color: #ffffff !important;
+        }
+        
+        .header-top-info i {
+            color: #ffffff !important;
+        }
+
+        /* Make navigation menu text white */
+        .main-menu .navigation > li > a {
+            color: #fff !important;
+            transition: color 0.3s;
+        }
+        
+        .main-menu .navigation > li > a:hover,
+        .main-menu .navigation > li.active > a {
+            color: hsl(30, 20%, 96%) !important;
+        }
+
+        /* Make main header background semi-transparent for better visibility */
+        .main_header {
+            background: rgba(0, 0, 0, 0.7) !important;
+        }
+
+        /* Sticky header styling */
+        .sticky_header {
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        /* Make breadcrumb section header white and visible */
+        .breadcrumb-section h1 {
+            color: #ffffff !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+/* Content area */
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+    }
+/* Album-style centered gallery */
+.album-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 20px;
+  padding: 60px 20px;
+  background: #fdfcfc;
+}
+
+.center-image img {
+  width: 420px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.center-image img:hover { transform: scale(1.05); }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.stack img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.7;
+  transform: scale(0.9);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+}
+.left-stack { align-items: flex-end; }
+.right-stack { align-items: flex-start; }
+
+.nav-btn {
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s, color 0.3s;
+}
+.nav-btn:hover { background: red; color: white; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 1, 1, 0.95);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);
+}
+.controls { margin-top: 20px; }
+.controls .btn {
+  padding: 10px 16px;
+  background: #fbfbfb;
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.controls .btn:hover { background: red; color: #fff; }
+
+
+
+    </style>
+
+</head>
+
+<!-- Page Wrapper -->
+<body class="boxed_wrapper">
+
+<!-- preloader -->
+<div class="loader-wrap">
+    <div class="preloader">
+        <div class="preloader-close">x</div>
+        <div id="handle-preloader" class="handle-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="ASC" class="letters-loading">
+                        ASC
+                    </span>
+                    <span data-text-preloader="END" class="letters-loading">
+                        END
+                    </span>
+                    <span data-text-preloader="ANCE" class="letters-loading">
+                        ANCE
+                    </span>
+                    <span data-text-preloader="-" class="letters-loading">
+                        -
+                    </span>
+                    <span data-text-preloader="EV" class="letters-loading">
+                        EV
+                    </span>
+                   
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<!-- preloader end -->
+
+<!--Search Popup-->
+<div id="search-popup" class="search-popup">
+    <div class="popup-inner">
+        <div class="container">
+            <div class="upper-box">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/Mainlogo.png" alt=""></a></figure>
+                <div class="close-search"><span class="fa-solid fa-xmark"></span></div>
+            </div>
+        </div>        
+        <div class="overlay-layer"></div>
+        <div class="container">
+            <div class="search-form">
+                <form method="post" action="https://z.commonsupport.com/html/carola/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
+                            <button type="submit"><i class="icon-50"></i></button>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Search Popup-->
+
+<!-- Main Header -->
+<header class="header home-three">
+    <!-- Main Header -->
+    <div class="main_header">
+        <div class="container"> 
+            <div class="main_header_inner">
+                <div class="main_header_logo">
+                    <figure>
+                        <a href="index.html"><img src="assets/images/Mainlogo.png" alt="Companny Logo"></a>
+                    </figure>
+                </div>
+                <div class="main_header_menu menu_area">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler" aria-label="Toggle mobile navigation menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <nav class="main-menu">
+                        <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+                            <ul class="navigation">
+                                <li class="dropdown"><a href="index.html">Home</a>
+                                </li>
+                                  <li class="active"><a href="Configuration.html">Configurator</a>
+                                </li>
+                                <li class="dropdown active"><a href="gallery.html">Gallery</a> 
+                                </li>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- End Main Header -->
+
+    <!-- Sticky Header-->
+    <div class="sticky_header">
+        <div class="container">
+            <div class="main_header_inner">
+                <div class="main_header_logo">
+                    <figure>
+                        <a href="index.html"><img src="assets/images/Mainlogo.png" alt="Companny Logo"></a>
+                    </figure>
+                </div>
+                <div class="main_header_menu menu_area">
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+                
+            </div>            
+        </div> 
+    </div>
+    <!-- End Sticky Header-->
+
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn">X</div>        
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/Mainlogo.png" alt="" title=""></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4></h4>
+                <ul>
+                    <li></li>
+                    <li><a href="mailto:info@example.com"></a></li>
+                </ul>
+            </div>
+            <ul class="social-links centred">
+                <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- End Mobile Menu -->
+
+</header>
+<!-- End Main Header -->
+
+<!-- Breadcrumb Section -->
+<section class="breadcrumb-section" style="background-image: url(assets/images/background/wheels.jpg);">
+    <div class="container">
+        <div class="banner-content">
+            <h1>Ascendance-EV Gallery</h1>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Gallery Section -->
+ <!-- Main Content -->
+  <!-- Center Album Style Gallery -->
+<div class="album-gallery">
+  <button class="nav-btn left" id="prevBtn">⟨</button>
+
+  <div class="stack left-stack" id="leftStack"></div>
+
+  <div class="center-image">
+    <img id="mainImage" src="assets/images/gallery/No4.jpg" alt="Main EV">
+  </div>
+
+  <div class="stack right-stack" id="rightStack"></div>
+
+  <button class="nav-btn right" id="nextBtn">⟩</button>
+</div>
+
+<!-- Lightbox Preview -->
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImage" src="" alt="Preview">
+  <div class="controls">
+    <span class="btn" id="closeBtn">✖ Close</span>
+  </div>
+</div>
+
+ <!-- Photo Album Section -->
+
+<!-- Main Footer -->
+<footer class="main_footer home-three pt_120">
+    <div class="container">
+        <div class="footer-top-outer">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_widget footer_about_widget">
+                        <figure class="footer_widget_logo">
+                            <a href="index.html"><img src="assets/images/Mainlogo.png" alt=""></a>
+                        </figure>
+                        <h6><strong>Follow Us On:</strong></h6>
+                        <ul class="social-links">
+                            <li><a href="#"><i class="fab fa-square-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-square-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_widget footer_resources_widget">
+                        <h4 class="footer_widget_title">Resources</h4>
+                        <ul class="resources_page_list">
+                            <li><a href="#">About Team</a></li>
+                            <li><a href="#">Policies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <div class="footer_widget footer_community_widget">
+                        <h4 class="footer_widget_title">Community</h4>
+                        <ul class="community_page_list">
+                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <div class="footer_widget footer_contact_widget">
+                        <h4 class="footer_widget_title">Contact</h4>
+                        <p>DBI Campus No. 1 Nitel Road, Cappa-Oshodi 100261 Lagos
+                            <br>
+                            Lot 660, Hay Moulay Rachid Ben Guerir, 43150, Morocco
+                        </p>
+                        <ul class="footer-info-list">
+                            <li><a href="#">hello@ascendanceev.com</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-outer">
+            <div class="copyright">Copyright &copy; 2025 &nbsp;<a href="index.html">Ascendance-EV</a> , Inc. All Rights Reserved</div>            
+        </div>
+    </div>
+</footer>
+<!-- Main Footer End -->
+
+<!-- Scroll to Top -->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <i class="icon-13"></i>
+</button>
+<!--End Scroll to Top -->
+
+<!-- Include Js -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/daterangepicker.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/booking-form.js"></script>
+
+<script>
+  const photos = [
+    "assets/images/gallery/No4.jpg",
+    "assets/images/gallery/No2.jpg",
+    "assets/images/gallery/No3.jpg",
+    "assets/images/gallery/No0001.jpg",
+    "assets/images/gallery/SEMETA.30.png",
+    "assets/images/gallery/No1.jpg",
+    "assets/images/gallery/No8.jpg",
+    "assets/images/gallery/SEMETA.23.png",
+    "assets/images/gallery/SEMETA.18.png",
+    "assets/images/gallery/SEMETA.19.png",
+    "assets/images/gallery/SEMETA.26.png"
+  ];
+
+  let currentIndex = 0;
+
+  const mainImage = document.getElementById('mainImage');
+  const leftStack = document.getElementById('leftStack');
+  const rightStack = document.getElementById('rightStack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeBtn = document.getElementById('closeBtn');
+
+  function updateGallery() {
+    mainImage.src = photos[currentIndex];
+
+    // Left previews (2 previous images)
+    leftStack.innerHTML = "";
+    for (let i = 1; i <= 2; i++) {
+      let idx = (currentIndex - i + photos.length) % photos.length;
+      let img = document.createElement('img');
+      img.src = photos[idx];
+      leftStack.appendChild(img);
+    }
+
+    // Right previews (2 next images)
+    rightStack.innerHTML = "";
+    for (let i = 1; i <= 2; i++) {
+      let idx = (currentIndex + i) % photos.length;
+      let img = document.createElement('img');
+      img.src = photos[idx];
+      rightStack.appendChild(img);
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    updateGallery();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % photos.length;
+    updateGallery();
+  });
+
+  // Lightbox
+  mainImage.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImage.src = photos[currentIndex];
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  // Init
+  updateGallery();
+</script>
+
+
+<!-- End Include Js -->
+
+</body>
+<!-- End Page Wrapper -->
+
+<!-- Mirrored from z.commonsupport.com/html/carola/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jul 2025 13:50:00 GMT -->
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+    <title>Vehicle Pricing - Ascendance-EV</title>
+    
+    <!-- CSS Files -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/fontawesome-all.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    
+    <!-- Enhanced Pricing Styles -->
+    <link rel="stylesheet" href="assets/css/pricing-enhanced.css">
+    
+    <!-- Bootstrap 5 CDN for enhanced components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Additional Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Pro -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Enhanced Navbar Styles */
+        .navbar-custom {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+        
+        .navbar-custom.scrolled {
+            background: rgba(0,0,0,0.8);
+            padding: 0.5rem 0;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-custom.scrolled .navbar-brand img {
+            height: 50px;
+        }
+        
+        /* Add padding to body for fixed navbar */
+        body {
+            padding-top: 80px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: rgba(231,76,60,0.3);
+            color: #fff !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Mobile menu styles */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(0,0,0,0.8);
+                border-radius: 15px;
+                margin-top: 1rem;
+                padding: 1rem;
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 0.25rem 0;
+                padding: 0.75rem 1rem;
+            }
+        }
+        
+        /* Enhanced Hero Section with Background */
+        .hero-pricing {
+            position: relative;
+            height: 100vh;
+            background:url('assets/images/background/banner-bg3.png');
+            background-size: 100px;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero-cta {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        /* Enhanced Pricing Cards */
+        .pricing-card-modern {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .pricing-card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-card-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-card-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-card-body {
+            padding: 2rem;
+        }
+        
+        .feature-list-modern {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list-modern li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list-modern li i {
+            color: #e74c3c;
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Enhanced Configuration Box - Reduced Size */
+        .config-box-modern {
+            font-size: 0.92rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            max-width: 320px;
+            min-width: 200px;
+            width: 100%;
+            min-height: 700px;
+        }
+        
+        .config-title-modern {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .config-section-modern {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .config-section-modern:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+        
+        .config-section-title-modern {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Compact form elements */
+        .form-check {
+            margin-bottom: 0.25rem;
+        }
+        
+        .form-check-label {
+            font-size: 0.85rem;
+        }
+        
+        .form-check-label small {
+            font-size: 0.7rem;
+        }
+        
+        /* Enhanced Price Display */
+        .price-display-box-modern {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: 16px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+            max-width: 240px; /* Reduced from 320px */
+            min-width: 160px; /* Reduced from 200px */
+            width: 100%;
+            position: static;
+            top: auto;
+            left: auto;
+            z-index: auto;
+            align-self: auto;
+            margin-left: 0;
+        }
+        
+        .price-display-title-modern {
+            font-size: 0.9rem; /* Reduced font size */
+            margin-bottom: 0.8rem; /* Reduced margin */
+        }
+        
+        .base-price-modern,
+        .total-price-display-modern {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0; /* Reduced padding */
+            font-size: 0.8rem; /* Reduced font size */
+        }
+        
+        .total-price-display-modern {
+            font-size: 1rem; /* Reduced font size */
+            margin-top: 0.5rem; /* Reduced margin */
+            padding-top: 0.5rem; /* Reduced padding */
+            font-weight: 700;
+            color: #f39c12;
+            border-top: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .btn-request-quote-modern {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-request-quote-modern:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231,76,60,0.4);
+        }
+        
+        /* Enhanced Image Gallery */
+        .gallery-section-modern {
+            margin-top: 4rem;
+            padding: 3rem 0;
+        }
+        
+        .gallery-title-modern {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+        
+        .gallery-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item-modern {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item-modern img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-overlay-modern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item-modern:hover .gallery-overlay-modern {
+            opacity: 1;
+        }
+        
+        .gallery-overlay-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* Pricing Section Vehicle Full Background */
+        .pricing-bg-vehicle {
+            position: relative;
+            background: url('assets/images/background/evo90.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+           
+        }
+        
+        /* Enhanced Vehicle Image Container */
+        .vehicle-image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .vehicle-center-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive vehicle image */
+        @media (max-width: 768px) {
+            .vehicle-image-container {
+                max-width: 90%;
+                height: 200px;
+            }
+        }
+        .pricing-bg-vehicle .container {
+            position: relative;
+            z-index: 2;
+        }
+        .pricing-bg-vehicle:before {
+            display: none;
+        }
+        #pricing-section {
+            position: relative;
+        }
+        /* Detach gallery visually */
+        .gallery-section-modern {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            margin-top: 0.5rem;
+            padding: 2.5rem 0 2rem 0;
+        }
+        /* Overlay boxes on top of vehicle image */
+        .pricing-row-overlay {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 400px;
+        }
+        .price-display-box-modern {
+            margin-left: 0;
+            position: static;
+            top: auto;
+            align-self: auto;
+        }
+        .config-box-modern {
+            margin-right: 0;
+        }
+        @media (max-width: 991px) {
+            .pricing-row-overlay {
+                flex-direction: column;
+                min-height: 0;
+            }
+            .price-display-box-modern, .config-box-modern {
+                margin: 1rem auto;
+                position: static !important;
+                left: auto !important;
+                top: auto !important;
+            }
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .pricing-card-price {
+                font-size: 2rem;
+            }
+            
+            .config-box-modern,
+            .price-display-box-modern {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .price-display-box-modern {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 100px;   /* distance from top of screen, leave space for navbar */
+  z-index: 1000;
+  background: #505050; /* make sure background covers text below */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+@media (min-width: 992px) { /* only apply on desktops */
+  .price-display-box-modern {
+    position: fixed;
+    top: 120px;   /* just under navbar */
+    left: 60px;   /* adjust to line up with your container */
+    width: 300px; /* set a fixed width */
+    z-index: 1000;
+    background: #505050;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+}       
+.vehicle-background {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 650px;   /* adjust size for desktop */
+  z-index: 1;         /* behind the boxes */
+  opacity: 1;         /* make sure it's visible */
+}
+
+.vehicle-background img {
+  width: 100%;
+  height: auto;
+  object-fit: center;
+  display: block;
+}
+
+/* Make it fit nicely on mobile */
+@media (max-width: 991px) {
+  .vehicle-background {
+    position: static;   /* stops overlapping */
+    transform: none;
+    max-width: 90%;
+    margin: 1rem auto;  /* centers inside flow */
+    text-align: center;
+  }
+
+  .vehicle-background img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Enhanced Bootstrap 5 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Mainlogo.png" alt="Ascendance-EV Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link active" href="Configuration.html">Configurator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section id="pricing-section" class="py-5 pricing-bg-vehicle">
+  <div class="container position-relative">
+
+    <!-- Vehicle background image -->
+    <div class="vehicle-background">
+      <img 
+        src="assets/images/gallery/No23.jpg" 
+        alt="Ascendance EV preview" class="img-fluid"
+      >
+    </div>
+
+    <div class="row pricing-row-overlay">
+        <!-- vehicle-->
+
+    <!-- Enhanced Pricing Section -->
+    <section id="pricing-section" class="py-5 pricing-bg-vehicle">
+        <div class="container position-relative">
+            <div class="row pricing-row-overlay">
+                <!-- Sticky Pricing Box -->
+                <div class="col-lg-4 d-flex justify-content-start align-items-start">
+                    <div class="price-display-box-modern" data-aos="fade-right">
+                        <h3 class="price-display-title-modern">
+                            <i class="fas fa-calculator me-2"></i>Your Configuration
+                        </h3>
+                        <div class="price-summary-modern">    
+                            <div class="base-price-modern">
+                                <span>Base Price</span>
+                                <span>$5,000</span>
+                            </div>
+                            <div class="selected-options-modern">
+                            </div>
+                            <div class="total-price-display-modern">
+                                <span>Total Price</span>
+                                <span id="calculatedTotal">$5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+       
+
+                <!-- Configuration Box (RIGHT)-->
+                <div class="col-lg-4 d-flex justify-content-end align-items-start">
+                    <div class="config-box-modern" data-aos="fade-left">
+                        <h3 class="config-title-modern">
+                            <i class="fas fa-cogs me-2"></i>Configure Your Ascendance EV
+                        </h3>
+                        
+                        <!-- Power Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-bolt me-2"></i>Power & Drive System
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="power" value="1wd" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>1 Wheel Drive</strong>
+                                            <br><small class="text-muted">Standard configuration +$1,500</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="power" value="2wd" data-price="3000">
+                                        <label class="form-check-label">
+                                            <strong>2 Wheel Drive</strong>
+                                            <br><small class="text-muted">Enhanced performance +$3,000</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="power" value="3wd" data-price="4500">
+                                        <label class="form-check-label">
+                                            <strong>3 Wheel Drive</strong>
+                                            <small class="text-muted">Maximum performance +$4,500</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Battery Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-battery-full me-2"></i>Battery Capacity
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="battery" value="5kw" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>5kW</strong>
+                                            <br><small class="text-muted">+$1500</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="battery" value="10kw" data-price="3000">
+                                        <label class="form-check-label">
+                                            <strong>10kW</strong>
+                                            <br><small class="text-muted">Extended range +$3,000</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="battery" value="15kw" data-price="4000">
+                                        <label class="form-check-label">
+                                            <strong>15kW</strong>
+                                            <br><small class="text-muted">Long range +$4,000</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                 <div class="row g-3">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="battery" value="20kw" data-price="5000">
+                                        <label class="form-check-label">
+                                            <strong>20kW</strong>
+                                            <br><small class="text-muted">range +$5,000</small>
+                                        </label>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Configuration Sections -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-window-maximize me-2"></i>Window Type
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="window" value="manual" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>Manual Powered</strong>
+                                            <br><small class="text-muted">Standard windows</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="window" value="auto" data-price="500">
+                                        <label class="form-check-label">
+                                            <strong>Auto Powered</strong>
+                                            <br><small class="text-muted">Electric windows +$500</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Configuration Sections -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-chair me-2"></i>Interior Options
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="interior" value="classic" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>Classic Interior</strong>
+                                            <br><small class="text-muted">Standard materials</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="interior" value="premium" data-price="500">
+                                        <label class="form-check-label">
+                                            <strong>Premium Interior</strong>
+                                            <br><small class="text-muted">Luxury materials +$500</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Roof Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-home me-2"></i>Roof Material
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="roof" value="composite" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>Composite Material</strong>
+                                            <br><small class="text-muted">Standard roof</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="roof" value="glass" data-price="200">
+                                        <label class="form-check-label">
+                                            <strong>Glass Roof</strong>
+                                            <br><small class="text-muted">Panoramic view +$200</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Glass Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-eye me-2"></i>Glass Type
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="glass" value="transparent" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>Trans-parent</strong>
+                                            <br><small class="text-muted">Clear glass</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="glass" value="black" data-price="50">
+                                        <label class="form-check-label">
+                                            <strong>Black Tint</strong>
+                                            <br><small class="text-muted">Privacy glass +$50</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="glass" value="tinted" data-price="50">
+                                        <label class="form-check-label">
+                                            <strong>Silver Tint</strong>
+                                            <br><small class="text-muted">Maximum privacy +$50</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dashcam Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-video me-2"></i>Dashcam
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dashcam" value="none" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>None</strong>
+                                            <br><small class="text-muted">$0.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dashcam" value="premium" data-price="500">
+                                        <label class="form-check-label">
+                                            <strong>Premium</strong>
+                                            <br><small class="text-muted">$500.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Climate/Temperature Control Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-temperature-high me-2"></i>Climate/Temperature Control
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="climate" value="none" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>None</strong>
+                                            <br><small class="text-muted">$0.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="climate" value="ac" data-price="250">
+                                        <label class="form-check-label">
+                                            <strong>Air Conditioner</strong>
+                                            <br><small class="text-muted">$250.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="climate" value="heated" data-price="200">
+                                        <label class="form-check-label">
+                                            <strong>Heated Seats</strong>
+                                            <br><small class="text-muted">$200.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Drive Assist Configuration -->
+                        <div class="config-section-modern">
+                            <h4 class="config-section-title-modern">
+                                <i class="fas fa-car-side me-2"></i>Drive Assist
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="assist" value="classic" data-price="0" checked>
+                                        <label class="form-check-label">
+                                            <strong>Classic</strong>
+                                            <br><small class="text-muted">Standard</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="assist" value="premium" data-price="1500">
+                                        <label class="form-check-label">
+                                            <strong>Premium</strong>
+                                            <br><small class="text-muted">$1,500.00</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Image Gallery - Detached Below -->
+    <div class="gallery-section-modern  pt-4" data-aos="fade-up">
+        <h2 class="gallery-title-modern">
+            <i class="fas fa-images me-2"></i>Featured Vehicles
+        </h2>
+        <div class="gallery-grid-modern">
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/No4.jpg" alt="EV Model 1">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 1</div>
+                </div>
+            </div>
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/No2.jpg" alt="EV Model 2">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 2</div>
+                </div>
+            </div>
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/SEMETA.23.png" alt="EV Model 3">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 3</div>
+                </div>
+            </div>
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/no177.jpg" alt="EV Model 4">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 4</div>
+                </div>
+            </div>
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/SEMETA.26.png" alt="EV Model 5">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 5</div>
+                </div>
+            </div>
+            <div class="gallery-item-modern">
+                <img src="assets/images/gallery/no1.jpg" alt="EV Model 6">
+                <div class="gallery-overlay-modern">
+                    <div class="gallery-overlay-text">Ascendance EV Model 6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Enhanced Footer -->
+<footer class="main_footer home-three pt_120">
+        <div class="container">
+            <div class="footer-top-outer">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_about_widget">
+                            <figure class="footer_widget_logo">
+                                <a href="index.html"><img src="assets/images/Mainlogo.png" alt=""></a>
+                            </figure>
+                            <h6><strong>Follow Us On:</strong></h6>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fab fa-square-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-square-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_resources_widget">
+                            <h4 class="footer_widget_title">Resources</h4>
+                            <ul class="resources_page_list">
+                                <li><a href="#">About Team</a></li>
+                                <li><a href="#">Policies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_community_widget">
+                            <h4 class="footer_widget_title">Community</h4>
+                            <ul class="community_page_list">
+                                <li><a href="#">Newsletter</a></li>
+                                <li><a href="#">Reviews</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_contact_widget">
+                            <h4 class="footer_widget_title">Contact</h4>
+                            <p>DBI Campus No. 1 Nitel Road, Cappa-Oshodi 100261 Lagos
+                                <br><br>
+                            Lot 660, Hay Moulay Rachid Ben Guerir, 43150, Morocco
+                            </p>
+                            <ul class="footer-info-list">
+                                <li><a href="#">hello@ascendanceev.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-outer">
+                <div class="copyright">Copyright &copy; 2025 &nbsp;<a href="index.html">Ascendance-EV</a> , Inc. All Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Enhanced pricing calculation
+        function calculateTotalPrice() {
+            let totalPrice =5000;
+            let selectedOptions = [];
+            
+            // Get all selected radio buttons
+            const powerOption = document.querySelector('input[name="power"]:checked');
+            const batteryOption = document.querySelector('input[name="battery"]:checked');
+            const windowOption = document.querySelector('input[name="window"]:checked');
+            const interiorOption = document.querySelector('input[name="interior"]:checked');
+            const roofOption = document.querySelector('input[name="roof"]:checked');
+            const glassOption = document.querySelector('input[name="glass"]:checked');
+            const dashcamOption = document.querySelector('input[name="dashcam"]:checked');
+            const climateOption = document.querySelector('input[name="climate"]:checked');
+            const assistOption = document.querySelector('input[name="assist"]:checked');
+
+            // Add prices and collect selected options
+            const options = [
+                powerOption,
+                batteryOption,
+                windowOption,
+                interiorOption,
+                roofOption,
+                glassOption,
+                dashcamOption,
+                climateOption,
+                assistOption
+            ];
+            const labels = [
+                'Drive System',
+                'Battery',
+                'Windows',
+                'Interior',
+                'Roof',
+                'Glass',
+                'Dashcam',
+                'Climate/Temperature Control',
+                'Drive Assist'
+            ];
+
+            options.forEach((option, index) => {
+                if (option) {
+                    const price = parseInt(option.dataset.price);
+                    totalPrice += price;
+                    const label = option.parentElement.querySelector('.form-check-label strong').textContent;
+                    selectedOptions.push({
+                        name: `${labels[index]}: ${label}`,
+                        price: price
+                    });
+                }
+            });
+            
+            // Update total price display
+            document.getElementById('calculatedTotal').textContent = '$' + totalPrice.toLocaleString();
+            
+            // Update selected options list
+            const optionsList = document.getElementById('selectedOptionsList');
+            if (selectedOptions.length > 0) {
+                optionsList.innerHTML = selectedOptions.map(option => 
+                    `<li><i class="fas fa-check text-success me-2"></i>${option.name} ${option.price > 0 ? `(+$${option.price.toLocaleString()})` : '(Included)'}</li>`
+                ).join('');
+            }
+        }
+        
+        // Add event listeners
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', calculateTotalPrice);
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', calculateTotalPrice);
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
